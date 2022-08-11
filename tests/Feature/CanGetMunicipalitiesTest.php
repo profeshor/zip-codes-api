@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use App\Models\State;
+use Illuminate\Support\Str;
 use App\Models\Municipality;
 use Database\Seeders\StateSeeder;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -54,5 +55,33 @@ class CanGetMunicipalitiesTest extends TestCase
                 'name' => 'ALVARO OBREGON'
             ]]);
 
+    }
+
+    public function test_get_single_municipality() {
+        $this->withoutExceptionHandling();
+        $this->seed(StateSeeder::class);
+
+        $id = 10;
+        $state_id = 9;
+
+        $municipality = Municipality::create([
+            'id' => $id,
+            'name' => "Álvaro Obregón",
+            'state_id' => $state_id,
+        ]);
+
+        $state = State::find($state_id);
+
+        $this->getJson(sprintf('/api/municipalities/%s/', $municipality->id))
+            ->assertOk()
+            ->assertExactJson([
+                'key' => $id,
+                'name' => 'ALVARO OBREGON',
+                'federal_entity' => [
+                    'key' => $state->id,
+                    'name' => strtoupper(Str::ascii($state->name)),
+                    'code' => $state->code,
+                ]
+            ]);
     }
 }

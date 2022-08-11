@@ -23,3 +23,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('states/',[StatesController::class, 'index']);
 Route::get('states/{state}/municipalities',[MunicipalitiesController::class, 'getMunicipalitiesByState']);
+Route::get('municipalities/{municipality}',[MunicipalitiesController::class, 'get']);

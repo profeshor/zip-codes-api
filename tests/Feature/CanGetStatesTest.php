@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use App\Models\State;
+use Illuminate\Support\Str;
 use Database\Seeders\StateSeeder;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -36,7 +37,7 @@ class CanGetStatesTest extends TestCase
             ->assertOk()
             ->assertJsonFragment([
                 'key' => $id,
-                'name' => $state_name,
+                'name' => strtoupper(Str::ascii($state_name)),
                 'code' => $state_code,
             ]);
     }

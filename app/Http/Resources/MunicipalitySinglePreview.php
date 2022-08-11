@@ -3,9 +3,10 @@
 namespace App\Http\Resources;
 
 use Illuminate\Support\Str;
+use App\Http\Resources\StatePreview;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class StatePreview extends JsonResource
+class MunicipalitySinglePreview extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,7 +19,7 @@ class StatePreview extends JsonResource
         return [
             'key' =>  $this->id,
             'name' => strtoupper(Str::ascii($this->name)),
-            'code' => $this->code,
+            'federal_entity' => new StatePreview($this->state)
         ];
     }
 }

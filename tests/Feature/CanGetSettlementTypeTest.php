@@ -18,9 +18,9 @@ class CanGetSettlementTypeTest extends TestCase
         ]);
 
         return $this->getJson(sprintf('/api/settlement_types/%s', $settlement_type->id))
-        ->assertOk()
-        ->assertExactJson([
-            'name' => "Pueblo",
-        ]);
+            ->assertOk()
+            ->assertExactJson([
+                'name' => "Pueblo",
+            ]);
     }
 }

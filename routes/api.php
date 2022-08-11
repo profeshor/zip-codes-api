@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StatesController;
+use App\Http\Controllers\SettlementController;
 use App\Http\Controllers\MunicipalitiesController;
 use App\Http\Controllers\SettlementTypesController;
 
@@ -26,3 +27,4 @@ Route::get('states/',[StatesController::class, 'index']);
 Route::get('states/{state}/municipalities',[MunicipalitiesController::class, 'getMunicipalitiesByState']);
 Route::get('municipalities/{municipality}',[MunicipalitiesController::class, 'get']);
 Route::get('settlement_types/{settlement_type}',[SettlementTypesController::class, 'get']);
+Route::get('settlements/{settlement}',[SettlementController::class, 'get']);

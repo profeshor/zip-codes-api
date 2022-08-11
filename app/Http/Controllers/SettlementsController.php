@@ -6,7 +6,7 @@ use App\Models\Settlement;
 use Illuminate\Http\Request;
 use App\Http\Resources\SettlementPreview;
 
-class SettlementController extends Controller
+class SettlementsController extends Controller
 {
     public function get(Settlement $settlement) {
         return new SettlementPreview($settlement);

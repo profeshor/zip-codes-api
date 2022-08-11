@@ -3,7 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StatesController;
-use App\Http\Controllers\SettlementController;
+use App\Http\Controllers\ZipCodesController;
+use App\Http\Controllers\SettlementsController;
 use App\Http\Controllers\MunicipalitiesController;
 use App\Http\Controllers\SettlementTypesController;
 
@@ -27,4 +28,5 @@ Route::get('states/',[StatesController::class, 'index']);
 Route::get('states/{state}/municipalities',[MunicipalitiesController::class, 'getMunicipalitiesByState']);
 Route::get('municipalities/{municipality}',[MunicipalitiesController::class, 'get']);
 Route::get('settlement_types/{settlement_type}',[SettlementTypesController::class, 'get']);
-Route::get('settlements/{settlement}',[SettlementController::class, 'get']);
+Route::get('settlements/{settlement}',[SettlementsController::class, 'get']);
+Route::get('zip-codes/{zip_code}',[ZipCodesController::class, 'get']);

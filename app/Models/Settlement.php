@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Municipality;
 use App\Models\SettlementType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -11,7 +12,7 @@ class Settlement extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id', 'name', 'zone_type', 'settlement_type_id'];
+    protected $fillable = ['id', 'name', 'zone_type', 'settlement_type_id', 'municipality_id'];
 
     /**
      * Get the settlement type that owns the Settlement
@@ -21,5 +22,15 @@ class Settlement extends Model
     public function settlement_type(): BelongsTo
     {
         return $this->belongsTo(SettlementType::class);
+    }
+
+    /**
+     * Get the municipality that owns the Settlement
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function municipality(): BelongsTo
+    {
+        return $this->belongsTo(Municipality::class);
     }
 }

@@ -18,7 +18,7 @@ class StateSeeder extends Seeder
 		['id' => 6, 'name'=>'Chihuahua', 'code'=>'CI'],
 		['id' => 7, 'name'=>'Coahuila de Zaragoza', 'code'=>'CU'],
 		['id' => 8, 'name'=>'Colima', 'code'=>'CL'],
-		['id' => 9, 'name'=>'Distrito Federal', 'code'=>'DF'],
+		['id' => 9, 'name'=>'Ciudad de Mexico', 'code'=>null],
 		['id' => 10, 'name'=>'Durango', 'code'=>'DG'],
 		['id' => 11, 'name'=>'Estado Mexico', 'code'=>'EM'],
 		['id' => 12, 'name'=>'Guanajuato', 'code'=>'GJ'],

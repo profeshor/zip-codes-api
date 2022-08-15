@@ -17,7 +17,7 @@ class SettlementPreview extends JsonResource
     public function toArray($request)
     {
         return [
-            'key' => $this->id,
+            'key' => $this->key,
             'name' => strtoupper(Str::ascii($this->name)),
             'zone_type' => $this-> zone_type,
             'settlement_type' => new SettlementTypePreview($this->settlement_type),

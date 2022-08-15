@@ -25,7 +25,7 @@ class CanRetrieveSingleZipCodeTest extends TestCase
         $state_id = 9;
 
         $municipality = Municipality::create([
-            'id' => 10,
+            'key' => 10,
             'name' => "Álvaro Obregón",
             'state_id' => $state_id
         ]);
@@ -35,7 +35,7 @@ class CanRetrieveSingleZipCodeTest extends TestCase
         ]);
 
         $settlement = Settlement::create([
-            'id' => 82,
+            'key' => 82,
             'name' => 'Santa Fe',
             'zone_type' => 'URBANO',
             'municipality_id' => $municipality->id,

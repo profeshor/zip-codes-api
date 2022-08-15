@@ -17,7 +17,7 @@ class MunicipalitySinglePreview extends JsonResource
     public function toArray($request)
     {
         return [
-            'key' =>  $this->id,
+            'key' =>  $this->key,
             'name' => strtoupper(Str::ascii($this->name)),
             'federal_entity' => new StatePreview($this->state)
         ];

@@ -19,6 +19,7 @@ class MunicipalityFactory extends Factory
     {
         return [
             'name' => fake()->city(),
+            'key' => fake()->randomNumber(),
             'state_id' => State::first()->id,
         ];
     }

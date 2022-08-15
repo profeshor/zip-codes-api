@@ -11,7 +11,7 @@ class Municipality extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id', 'name', 'state_id'];
+    protected $fillable = ['id', 'key', 'name', 'state_id'];
 
     /**
      * Get the state that owns the Municipality

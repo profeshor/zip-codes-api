@@ -12,7 +12,7 @@ class Settlement extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id', 'name', 'zone_type', 'settlement_type_id', 'municipality_id'];
+    protected $fillable = ['id', 'name', 'key',  'zone_type', 'settlement_type_id', 'municipality_id'];
 
     /**
      * Get the settlement type that owns the Settlement

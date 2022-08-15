@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('settlements', function (Blueprint $table) {
             $table->id();
+            $table->integer('key');
             $table->string('name');
             $table->string('zone_type');
             $table->integer('settlement_type_id');

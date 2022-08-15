@@ -12,7 +12,7 @@ class Settlement extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id', 'name', 'key',  'zone_type', 'settlement_type_id', 'municipality_id'];
+    protected $fillable = ['id', 'name', 'key',  'zone_type', 'settlement_type_id', 'municipality_id', 'zip_code_id'];
 
     /**
      * Get the settlement type that owns the Settlement
@@ -32,5 +32,15 @@ class Settlement extends Model
     public function municipality(): BelongsTo
     {
         return $this->belongsTo(Municipality::class);
+    }
+
+    /**
+     * Get the zip_code that owns the Settlement
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function zip_code(): BelongsTo
+    {
+        return $this->belongsTo(ZipCodes::class);
     }
 }

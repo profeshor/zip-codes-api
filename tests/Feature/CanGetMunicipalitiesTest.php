@@ -6,7 +6,7 @@ use Tests\TestCase;
 use App\Models\State;
 use Illuminate\Support\Str;
 use App\Models\Municipality;
-use Database\Seeders\StateSeeder;
+use Database\Seeders\StatesSeeder;
 use Database\Seeders\MunicipalitiesSeeder;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -22,7 +22,7 @@ class CanGetMunicipalitiesTest extends TestCase
      */
     public function test_can_get_municipalities_by_state() {
         // $this->withoutExceptionHandling();
-        $this->seed(StateSeeder::class);
+        $this->seed(StatesSeeder::class);
         $state = State::first();
         $state->municipalities()->saveMany(
             Municipality::factory()->count(4)->create()
@@ -38,7 +38,7 @@ class CanGetMunicipalitiesTest extends TestCase
      * @return void
      */
     public function test_municipalities_display_correct_format() {
-        $this->seed(StateSeeder::class);
+        $this->seed(StatesSeeder::class);
 
         $key = 10;
         $state_id = 9;
@@ -65,7 +65,7 @@ class CanGetMunicipalitiesTest extends TestCase
      */
     public function test_get_single_municipality() {
         $this->withoutExceptionHandling();
-        $this->seed(StateSeeder::class);
+        $this->seed(StatesSeeder::class);
 
         $key = 10;
         $state_id = 9;
@@ -112,7 +112,7 @@ class CanGetMunicipalitiesTest extends TestCase
      * @return void
      */
     public function test_can_seed_Municipality_and_retrieve_by_state($state_id, $municipalities_count) {
-        $this->seed(StateSeeder::class);
+        $this->seed(StatesSeeder::class);
         $this->seed(MunicipalitiesSeeder::class);
 
         $municipalities = $this->getJson(sprintf('/api/states/%s/municipalities', $state_id));

@@ -19,7 +19,7 @@ class SettlementPreview extends JsonResource
         return [
             'key' => $this->key,
             'name' => strtoupper(Str::ascii($this->name)),
-            'zone_type' => $this-> zone_type,
+            'zone_type' => strtoupper(Str::ascii($this->zone_type)),
             'settlement_type' => new SettlementTypePreview($this->settlement_type),
         ];
     }

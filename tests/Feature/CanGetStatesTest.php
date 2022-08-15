@@ -5,7 +5,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use App\Models\State;
 use Illuminate\Support\Str;
-use Database\Seeders\StateSeeder;
+use Database\Seeders\StatesSeeder;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -32,7 +32,7 @@ class CanGetStatesTest extends TestCase
      * @dataProvider states_data_provider
      */
     public function test_can_retrieve_states_correct_format($id, $state_name, $state_code) {
-        $this->seed(StateSeeder::class);
+        $this->seed(StatesSeeder::class);
         return $this->getJson('/api/states')
             ->assertOk()
             ->assertJsonFragment([

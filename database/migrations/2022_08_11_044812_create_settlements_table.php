@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('zone_type');
             $table->integer('settlement_type_id');
             $table->integer('municipality_id');
+            $table->integer('zip_code_id');
             $table->timestamps();
         });
     }

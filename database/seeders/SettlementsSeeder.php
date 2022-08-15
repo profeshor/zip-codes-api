@@ -17,16 +17,16 @@ class SettlementsSeeder extends Seeder
     {
         DB::table('settlements')->truncate();
 
-        $this->call(AguasCalientesSettlementsSeeder::class);
+        /*$this->call(AguasCalientesSettlementsSeeder::class);
         $this->call(BajaCaliforiaSettlementsSeeder::class);
         $this->call(BajaCaliforiaSurSettlementsSeeder::class);
         $this->call(CampecheSettlementsSeeder::class);
         $this->call(CoahuilaDeZaragozaSettlementsSeeder::class);
         $this->call(ColimaSettlementsSeeder::class);
         $this->call(ChiapasSettlementsSeeder::class);
-        $this->call(ChihuahuaSettlementsSeeder::class);
+        $this->call(ChihuahuaSettlementsSeeder::class);*/
         $this->call(DistritoFederalSettlementsSeeder::class);
-        $this->call(DurangoSettlementsSeeder::class);
+       /* $this->call(DurangoSettlementsSeeder::class);
         $this->call(GuanajuatoSettlementsSeeder::class);
         $this->call(GuerreroSettlementsSeeder::class);
         $this->call(HidalgoSettlementsSeeder::class);
@@ -48,6 +48,6 @@ class SettlementsSeeder extends Seeder
         $this->call(TlaxlacaSettlementsSeeder::class);
         $this->call(VeracruzSettlementsSeeder::class);
         $this->call(YucatanSettlementsSeeder::class);
-        $this->call(ZacatecasSettlementsSeeder::class);
+        $this->call(ZacatecasSettlementsSeeder::class);*/
     }
 }

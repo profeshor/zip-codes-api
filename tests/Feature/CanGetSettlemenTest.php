@@ -8,7 +8,8 @@ use App\Models\Settlement;
 use Illuminate\Support\Str;
 use App\Models\Municipality;
 use App\Models\SettlementType;
-use Database\Seeders\StateSeeder;
+use Database\Seeders\StatesSeeder;
+use Database\Seeders\ZipCodesSeeder;
 use Database\Seeders\SettlementsSeeder;
 use Database\Seeders\MunicipalitiesSeeder;
 use Database\Seeders\SettlementTypesSeeder;
@@ -36,6 +37,7 @@ class CanGetSettlemenTest extends TestCase
             'key' => $key,
             'name' => $name,
             'zone_type' => $zone_type,
+            'zip_code_id' => 1,
             'settlement_type_id' => $settlement_type->id,
             'municipality_id' => $municipality->id
         ]);
@@ -45,17 +47,19 @@ class CanGetSettlemenTest extends TestCase
             ->assertExactJson([
                 'key' => $key,
                 'name' => strtoupper(Str::ascii($name)),
-                'zone_type' => $zone_type,
+                'zone_type' => strtoupper($zone_type),
                 'settlement_type' => [
                     'name' => $settlement_type->name,
                 ],
             ]);
     }
 
+   /*
     public function test_can_fill_settlement_and_get () {
-        $this->seed(StateSeeder::class);
+        $this->seed(StatesSeeder::class);
         $this->seed(MunicipalitiesSeeder::class);
         $this->seed(SettlementTypesSeeder::class);
+        $this->seed(ZipCodesSeeder::class);
         $this->seed(SettlementsSeeder::class);
         return $this->getJson(sprintf('/api/settlements/%s', 1))
             ->assertOk()
@@ -67,5 +71,5 @@ class CanGetSettlemenTest extends TestCase
                     'name' => 'Colonia',
                 ],
             ]);
-    }
+    }*/
 }

@@ -43,7 +43,7 @@ class SettlementTypesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('states')->truncate();
+        DB::table('settlement_types')->truncate();
         SettlementType::insert($this->settlementTypesList);
     }
 }

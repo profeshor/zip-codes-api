@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('zip_code')->unique();
             $table->string('locality');
             $table->integer('state_id');
-            $table->integer('settlement_id');
             $table->integer('municipality_id');
             $table->timestamps();
         });

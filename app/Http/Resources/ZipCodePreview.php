@@ -21,9 +21,9 @@ class ZipCodePreview extends JsonResource
         return [
             'zip_code' => $this->zip_code,
             'locality' => strtoupper(Str::ascii($this->locality)),
+            'federal_entity' => new StatePreview($this->state),
             'settlements' => SettlementPreview::collection($this->settlements),
             'municipality' => new MunicipalityPreview($this->municipality),
-            'federal_entity' => new StatePreview($this->state)
         ];
     }
 }

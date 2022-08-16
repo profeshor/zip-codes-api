@@ -1,15 +1,15 @@
-## About this project
+# About this project
 
 This Project has done by Pablo Perez Martinez in order to resolve the coding challenge which consists in developing an api which returns zip codes of Mexico.
 
-# Public Zip Code URL's to test API
+## Public Zip Code URL's to test API
 
 https://zip-codes-app.herokuapp.com/api/zip-codes/01210
 https://zip-codes-app.herokuapp.com/api/zip-codes/01220
 https://zip-codes-app.herokuapp.com/api/zip-codes/68000
 https://zip-codes-app.herokuapp.com/api/zip-codes/69000
 
-# How to install this application
+## How to install this application
 This application was done with Laravel sail (see https://laravel.com/docs/9.x/sail) in order to make easier the installation with Docker.
 
 To install this application it is necesary to run the following commands
@@ -28,7 +28,7 @@ To seed the database records:
 ```
 ./vendor/bin/sail artisan migrate
 ```
-# How this challenge was resolved
+## How this challenge was resolved
 
 The first challenge that was found is to understand the distribution of the tables, due only an excel file was provided. In base of that the herarchy of the  project was defined like the tree below.
 
@@ -55,7 +55,7 @@ The improvements that could be done are several features such as:
 
 Similar improvements can be found on the following routes. But they are not still completely serialized.
 
-# Improvements made
+## Improvements made
 
 GET 'states/' Gets states lists
 GET 'states/{state}/municipalities Gets municipalities list by state
@@ -65,6 +65,7 @@ GET 'settlements/{settlement_ID} Gets single settlement
 
 They can be found on routes/api.php file.
 
+# Laravel
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">

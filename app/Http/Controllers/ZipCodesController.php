@@ -10,8 +10,9 @@ class ZipCodesController extends Controller
 {
     public function get (String $zip_code) {
         $zipCodeElement = ZipCode::where('zip_code', $zip_code)->first();
-
-        //dd($zipCodeElement);
+        if ($zipCodeElement == null) {
+            abort(404, 'Zip Code Not Found');
+        }
         return new ZipCodePreview($zipCodeElement);
     }
 }

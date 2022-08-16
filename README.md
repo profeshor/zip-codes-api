@@ -4,10 +4,10 @@ This Project has done by Pablo Perez Martinez in order to resolve the coding cha
 
 ## Public Zip Code URL's to test API
 
-https://zip-codes-app.herokuapp.com/api/zip-codes/01210
-https://zip-codes-app.herokuapp.com/api/zip-codes/01220
-https://zip-codes-app.herokuapp.com/api/zip-codes/68000
-https://zip-codes-app.herokuapp.com/api/zip-codes/69000
+- https://zip-codes-app.herokuapp.com/api/zip-codes/01210
+- https://zip-codes-app.herokuapp.com/api/zip-codes/01220
+- https://zip-codes-app.herokuapp.com/api/zip-codes/68000
+- https://zip-codes-app.herokuapp.com/api/zip-codes/69000
 
 ## How to install this application
 This application was done with Laravel sail (see https://laravel.com/docs/9.x/sail) in order to make easier the installation with Docker.

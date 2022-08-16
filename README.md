@@ -1,3 +1,43 @@
+### About this project
+
+This Project has done by Pablo Perez Martinez in order to resolve the coding challenge which consists in developing an api which returns zip codes of Mexico.
+
+## How to install this application
+This application was done with Laravel sail (see https://laravel.com/docs/9.x/sail) in order to make easier the installation with Docker.
+
+To install this application it is necesary to run the following commands
+
+To run laravel with mysql stack created on this project:
+```
+/vendor/bin/sail up
+```
+
+To migrate the database:
+```
+/vendor/bin/sail migrate:refresh
+```
+
+To seed the database records:
+```
+./vendor/bin/sail artisan migrate
+```
+## How this challenge was resolved
+
+The first challenge that was found is to understand the distribution of the tables, due only an excel file was provided. In base of that the herarchy of the  project was defined like the tree below.
+
+|- States
+    |-- Municipalities
+        |--- Zip codes
+            |---- Settlements
+
+Once it was defined, the creation of the tests were developed (see on tests/Feature folder); they were builded in the order above (from states to settlements); and they helped to build the migrations, the models, the controllers and the Json resources.
+
+The migrations were done carefully in order to keep the herarchy above, so the models, and the controllers retrieve the data with the challenge specifications.
+
+Finally, the most challenging part of this project was to put the data on the database seeder (see on database/seeders folder), where seeders were builded for each state of Mexico. It took long, due the big amount of records for zip codes, settlements and municipalities.
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">

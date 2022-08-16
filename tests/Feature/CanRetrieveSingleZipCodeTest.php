@@ -142,7 +142,7 @@ class CanRetrieveSingleZipCodeTest extends TestCase
                 'federal_entity' => [
                     "key"=> 1,
                     "name"=> "AGUASCALIENTES",
-                    "code"=> 'AG'
+                    "code"=> null
                 ],
                 'settlements' => [
                     [
@@ -207,7 +207,7 @@ class CanRetrieveSingleZipCodeTest extends TestCase
                 'federal_entity' => [
                     "key"=> 2,
                     "name"=> "BAJA CALIFORNIA",
-                    "code"=> 'BJ'
+                    "code"=> null
                 ],
                 'settlements' => [
                     [

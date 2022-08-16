@@ -53,23 +53,4 @@ class CanGetSettlemenTest extends TestCase
                 ],
             ]);
     }
-
-   /*
-    public function test_can_fill_settlement_and_get () {
-        $this->seed(StatesSeeder::class);
-        $this->seed(MunicipalitiesSeeder::class);
-        $this->seed(SettlementTypesSeeder::class);
-        $this->seed(ZipCodesSeeder::class);
-        $this->seed(SettlementsSeeder::class);
-        return $this->getJson(sprintf('/api/settlements/%s', 1))
-            ->assertOk()
-            ->assertExactJson([
-                'key' => 1,
-                'name' => strtoupper(Str::ascii('Aguascalientes Centro')),
-                'zone_type' => 'Urbano',
-                'settlement_type' => [
-                    'name' => 'Colonia',
-                ],
-            ]);
-    }*/
 }

@@ -24,7 +24,7 @@ class CanGetStatesTest extends TestCase
     public function states_data_provider() {
         return [
             'Test Mexico DF' => [9, 'CIUDAD DE MEXICO', null],
-            'Test Michoacan' => [17, 'MICHOACAN', 'MH']
+            'Test Michoacan' => [17, 'MICHOACAN', null]
         ];
     }
 

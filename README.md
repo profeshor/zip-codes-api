@@ -57,11 +57,11 @@ Similar improvements can be found on the following routes. But they are not stil
 
 ## Improvements made
 
-GET 'states/' Gets states lists
-GET 'states/{state}/municipalities Gets municipalities list by state
-GET 'municipalities/{municipality_ID} Gets a single municipality
-GET 'settlement_types/{settlement_type_ID} Gets single settlement type
-GET 'settlements/{settlement_ID} Gets single settlement
+- GET 'states/' Gets states lists
+- GET 'states/{state}/municipalities Gets municipalities list by state
+- GET 'municipalities/{municipality_ID} Gets a single municipality
+- GET 'settlement_types/{settlement_type_ID} Gets single settlement type
+- GET 'settlements/{settlement_ID} Gets single settlement
 
 They can be found on routes/api.php file.
 

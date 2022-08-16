@@ -16,6 +16,9 @@ class ZipCodesSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(AguasCalientesZipCodesSeeder::class);
+        $this->call(BajaCaliforniaZipCodesSeeder::class);
+        $this->call(BajaCaliforniaSurZipCodesSeeder::class);
         $this->call(DistritoFederalZipCodesSeeder::class);
     }
 }

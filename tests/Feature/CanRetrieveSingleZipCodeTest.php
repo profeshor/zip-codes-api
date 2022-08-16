@@ -81,9 +81,12 @@ class CanRetrieveSingleZipCodeTest extends TestCase
             ]);
     }
 
-    use RefreshDatabase;
-
-    public function test_can_retrieve_single_zip_code_with_seed() {
+    /**
+     * Tests real data for DF
+     *
+     * @return void
+     */
+    public function test_can_retrieve_single_DF_zip_code_with_seed() {
         $this->withoutExceptionHandling();
 
         $this->seed(StatesSeeder::class);
@@ -93,9 +96,6 @@ class CanRetrieveSingleZipCodeTest extends TestCase
         $this->seed(ZipCodesSeeder::class);
         $this->seed(SettlementsSeeder::class);
 
-        //dd ($this->getJson(sprintf('/api/zip-codes/%s', '01210')));
-        //dd(State::all());
-        //dd(ZipCode::where('zip_code', '01210')->first());
         return $this->getJson(sprintf('/api/zip-codes/%s', '01210'))
             ->assertOk()
             ->assertExactJson([
@@ -117,6 +117,122 @@ class CanRetrieveSingleZipCodeTest extends TestCase
                 "municipality"=> [
                     "key"=> 10,
                     "name"=> "ALVARO OBREGON"
+                ]
+            ]);
+    }
+
+    /**
+     * Test for Aguas calientes with real data
+     *
+     * @return void
+     */
+    public function test_can_retrieve_single_AC_zip_code_with_seed() {
+        $this->withoutExceptionHandling();
+
+        $this->seed(StatesSeeder::class);
+
+        $this->seed(MunicipalitiesSeeder::class);
+        $this->seed(SettlementTypesSeeder::class);
+        $this->seed(ZipCodesSeeder::class);
+        $this->seed(SettlementsSeeder::class);
+
+        return $this->getJson(sprintf('/api/zip-codes/%s', '20020'))
+            ->assertOk()
+            ->assertExactJson([
+                'zip_code' => '20020',
+                'locality' => "AGUASCALIENTES",
+                'federal_entity' => [
+                    "key"=> 1,
+                    "name"=> "AGUASCALIENTES",
+                    "code"=> 'AG'
+                ],
+                'settlements' => [
+                    [
+                    "key"=> 16,
+                    "name"=> "BUENOS AIRES",
+                    "zone_type"=> "URBANO",
+                    "settlement_type" => [
+                        "name"=> "Colonia"
+                        ]
+                    ],
+                    [
+                    "key"=> 18,
+                    "name"=> "CIRCUNVALACION NORTE",
+                    "zone_type"=> "URBANO",
+                    "settlement_type" => [
+                        "name"=> "Fraccionamiento"
+                        ]
+                    ],
+                    [
+                    "key"=> 19,
+                    "name"=> "LAS ARBOLEDAS",
+                    "zone_type"=> "URBANO",
+                    "settlement_type" => [
+                        "name"=> "Fraccionamiento"
+                        ]
+                    ],
+                    [
+                    "key"=> 20,
+                    "name"=> "VILLAS DE SAN FRANCISCO",
+                    "zone_type"=> "URBANO",
+                    "settlement_type" => [
+                        "name"=> "Fraccionamiento"
+                        ]
+                    ],
+                ],
+                "municipality"=> [
+                    "key"=> 1,
+                    "name"=> "AGUASCALIENTES"
+                ]
+            ]);
+    }
+
+    /**
+     * Test for Baja California with real data
+     *
+     * @return void
+     */
+    public function test_can_retrieve_single_BC_zip_code_with_seed() {
+        $this->withoutExceptionHandling();
+
+        $this->seed(StatesSeeder::class);
+
+        $this->seed(MunicipalitiesSeeder::class);
+        $this->seed(SettlementTypesSeeder::class);
+        $this->seed(ZipCodesSeeder::class);
+        $this->seed(SettlementsSeeder::class);
+
+        return $this->getJson(sprintf('/api/zip-codes/%s', '21120'))
+            ->assertOk()
+            ->assertExactJson([
+                'zip_code' => '21120',
+                'locality' => "MEXICALI",
+                'federal_entity' => [
+                    "key"=> 2,
+                    "name"=> "BAJA CALIFORNIA",
+                    "code"=> 'BJ'
+                ],
+                'settlements' => [
+                    [
+                    "key"=> 38,
+                    "name"=> "PUEBLO NUEVO",
+                    "zone_type"=> "URBANO",
+                    "settlement_type" => [
+                        "name"=> "Colonia"
+                        ]
+                    ],
+                    [
+                    "key"=> 39,
+                    "name"=> "RIO NUEVO",
+                    "zone_type"=> "URBANO",
+                    "settlement_type" => [
+                        "name"=> "Colonia"
+                        ]
+                    ],
+                ],
+                "municipality"=> [
+                    "key"=> 2,
+                    "name"=> "MEXICALI"
                 ]
             ]);
     }

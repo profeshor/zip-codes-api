@@ -17,10 +17,10 @@ class SettlementsSeeder extends Seeder
     {
         DB::table('settlements')->truncate();
 
-        /*$this->call(AguasCalientesSettlementsSeeder::class);
+        $this->call(AguasCalientesSettlementsSeeder::class);
         $this->call(BajaCaliforiaSettlementsSeeder::class);
         $this->call(BajaCaliforiaSurSettlementsSeeder::class);
-        $this->call(CampecheSettlementsSeeder::class);
+        /*$this->call(CampecheSettlementsSeeder::class);
         $this->call(CoahuilaDeZaragozaSettlementsSeeder::class);
         $this->call(ColimaSettlementsSeeder::class);
         $this->call(ChiapasSettlementsSeeder::class);

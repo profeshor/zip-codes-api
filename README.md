@@ -33,8 +33,11 @@ To seed the database records:
 The first challenge that was found is to understand the distribution of the tables, due only an excel file was provided. In base of that the herarchy of the  project was defined like the tree below.
 
 ├── States
+
 │   ├── Municipalities
+
 │   │   ├── Zip codes
+
 │   │   │   ├── Settlements
 
 Once it was defined, the creation of the tests were developed (see on tests/Feature folder); they were builded in the order above (from states to settlements); and they helped to build the migrations, the models, the controllers and the Json resources.

@@ -90,7 +90,6 @@ class CanRetrieveSingleZipCodeTest extends TestCase
         $this->withoutExceptionHandling();
 
         $this->seed(StatesSeeder::class);
-
         $this->seed(MunicipalitiesSeeder::class);
         $this->seed(SettlementTypesSeeder::class);
         $this->seed(ZipCodesSeeder::class);
@@ -130,7 +129,6 @@ class CanRetrieveSingleZipCodeTest extends TestCase
         $this->withoutExceptionHandling();
 
         $this->seed(StatesSeeder::class);
-
         $this->seed(MunicipalitiesSeeder::class);
         $this->seed(SettlementTypesSeeder::class);
         $this->seed(ZipCodesSeeder::class);
@@ -196,7 +194,6 @@ class CanRetrieveSingleZipCodeTest extends TestCase
         $this->withoutExceptionHandling();
 
         $this->seed(StatesSeeder::class);
-
         $this->seed(MunicipalitiesSeeder::class);
         $this->seed(SettlementTypesSeeder::class);
         $this->seed(ZipCodesSeeder::class);

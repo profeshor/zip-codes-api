@@ -26,7 +26,7 @@ To migrate the database:
 
 To seed the database records:
 ```
-./vendor/bin/sail artisan migrate
+./vendor/bin/sail artisan db:seed
 ```
 ## How this challenge was resolved
 
